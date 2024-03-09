@@ -1,0 +1,641 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  /* 
+      Change favorite color
+      Default: hsl(255, 90%, 60%)
+      Orange: hsl(14, 90%, 60%) - Blue: hsl(210, 90%, 50%)
+      Pink: hsl(356, 100%, 65%) - Green: hsl(162, 90%, 40%)
+
+      For more colors visit: https://colors.dopely.top/color-pedia
+      -> Choose any color 
+      -> Click on tab (Color Conversion)
+      -> Copy the color mode (HSL)
+  */
+  --hue: 255;
+  --first-color: hsl(var(--hue), 90%, 60%);
+  --first-color-alt: hsl(var(--hue), 82%, 56%);
+  --first-color-light: hsl(var(--hue), 40%, 80%);
+  --title-color: hsl(var(--hue), 24%, 16%);
+  --text-color: hsl(var(--hue), 8%, 45%);
+  --text-color-light: hsl(var(--hue), 8%, 60%);
+  --white-color: hsl(0, 0%, 100%);
+  --body-color: hsl(0, 0%, 100%);
+  --container-color: hsl(0, 0%, 100%);
+  --shadow-color: hsla(var(--hue), 90%, 30%, .1);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Syne", sans-serif;
+  --biggest-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+  :root {
+    --biggest-font-size: 4.5rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1.125rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: background-color .4s;
+}
+
+input,
+button,
+textarea {
+  border: none;
+  outline: none;
+}
+
+h1, h2, h3, h4 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== THEME ===============*/
+
+
+/*========== Variables Dark theme ==========*/
+
+
+/*========== 
+	Color changes in some parts of 
+	the website, in dark theme
+==========*/
+
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding-block: 5rem 1rem;
+}
+.section_title {
+  font-size: var(--h1-font-size);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.perfil {
+  width: 250px;
+  height: 250px;
+  background-color: var(--body-color);
+  border: 8px solid var(--first-color);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: background-color .4s;
+}
+
+.perfil_content {
+  width: 180px;
+  height: 180px;
+  border: 10px solid var(--first-color);
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background: linear-gradient(180deg, 
+  hsl(var(--hue), 90%, 80%), 
+  hsl(var(--hue), 90%, 30%));
+}
+
+.perfil_img {
+  width: 150px;
+}
+
+.main {
+  overflow: hidden;
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  z-index: var(--z-fixed);
+  transition: background-color .4s, box-shadow .4s;
+}
+
+.nav {
+  position: relative;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav_logo {
+  color: var(--white-color);
+  font-weight: var(--font-semi-bold);
+  transition: color .4s;
+}
+
+.nav_toggle,
+.nav_close {
+  display: inline-flex;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.nav_toggle {
+  color: var(--white-color);
+  transition: color .4s;
+}
+
+.nav_close {
+  color: var(--title-color);
+}
+
+/* Navigation for mobile devices */
+@media screen and (max-width: 1150px) {
+  .nav_menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    background-color: var(--body-color);
+    width: 100%;
+    box-shadow: 0 12px 24px var(--shadow-color);
+    padding-block: 5rem 4rem;
+    transition: top .4s;
+  }
+}
+
+.nav_list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+  text-align: center;
+}
+
+.nav_link {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  transition: color .4s;
+}
+
+.nav_link:hover {
+  color: var(--first-color);
+}
+
+.nav_close {
+  position: absolute;
+  top: 1.15rem;
+  right: 1.5rem;
+}
+
+/* Show menu */
+.show_menu {
+  top: 0;
+}
+
+/* Change background header */
+.bg_header {
+  background-color: var(--body-color);
+  box-shadow: 0 2px 16px var(--shadow-color);
+}
+
+.bg_header :is(.nav_logo, .nav_toggle) {
+  color: var(--title-color);
+}
+
+/* Header background color of other pages */
+.header_pages {
+  background-color: var(--body-color);
+}
+
+.header_pages :is(.nav_logo, .nav_toggle) {
+  color: var(--title-color);
+}
+
+/*=============== BUTTON ===============*/
+.button {
+  display: inline-block;
+  background-color: var(--first-color);
+  color: var(--white-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1rem 2rem;
+  transition: background-color .4s, box-shadow .4s;
+}
+
+.button:hover {
+  background-color: var(--first-color-alt);
+  box-shadow: 0 8px 24px hsla(var(--hue), 90%, 30%, .3);
+}
+
+/*=============== HOME ===============*/
+.home {
+  position: relative;
+  border-bottom: 8px solid var(--first-color);
+}
+
+.home_rectangle {
+  width: 100%;
+  height: 220px;
+  background-color: var(--first-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.home_container {
+  padding-block: 1rem 3rem;
+}
+
+.home_perfil {
+  justify-self: center;
+}
+
+.home_data {
+  row-gap: .75rem;
+  text-align: center;
+}
+
+.home_name {
+  font-size: var(--biggest-font-size);
+}
+
+.home_profession {
+  font-size: var(--h2-font-size);
+}
+
+.home_social {
+  display: flex;
+  justify-content: center;
+  column-gap: 1rem;
+}
+
+.home_social_link {
+  font-size: 1.5rem;
+  color: var(--title-color);
+  transition: color .4s;
+}
+
+.home_social_link:hover {
+  color: var(--first-color);
+}
+
+.home_button {
+  justify-self: center;
+}
+
+/*=============== ABOUT ===============*/
+.about_page {
+  padding-bottom: 4rem;
+}
+
+.about_perfil {
+  justify-self: center;
+}
+
+.about_content {
+  row-gap: 4rem;
+}
+
+.about_data {
+  row-gap: 2rem;
+}
+
+.about_info {
+  row-gap: .75rem;
+  text-align: center;
+}
+
+.about_name {
+  font-size: var(--h1-font-size);
+}
+
+.abut_profession {
+  font-size: var(--h2-font-size);
+}
+
+.about_description b {
+  color: var(--first-color);
+}
+
+.about_button {
+  justify-self: center;
+}
+
+.about_skills_title {
+  font-size: var(--h3-font-size);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about_skills_img {
+  width: 35px;
+  transition: transform .4s;
+}
+
+.about_skills_img:hover {
+  transform: translateY(-.5rem);
+}
+
+.about_skills_content {
+  grid-template-columns: repeat(5, max-content);
+  justify-content: center;
+  align-items: center;
+  gap: 2rem 1.5rem;
+}
+
+/*=============== SERVICES ===============*/
+.services_container {
+  row-gap: 2rem;
+}
+
+.services_card {
+  background-color: var(--container-color);
+  padding: 3.5rem 1.5rem;
+  box-shadow: 0 12px 24px var(--shadow-color);
+  text-align: center;
+  transition: background-color .4s;
+}
+
+.services_icon {
+  display: inline-block;
+  font-size: 3rem;
+  color: var(--first-color);
+  margin-bottom: 1.5rem;
+}
+
+.services_title {
+  font-size: var(--h2-font-size);
+  margin-bottom: 1rem;
+}
+
+.services_description {
+  margin-bottom: 3rem;
+}
+
+.services_button {
+  cursor: pointer;
+}
+
+.services_modal {
+  position: fixed;
+  inset: 0;
+  background-color: hsla(var(--hue), 90%, 30%, .3);
+  backdrop-filter: blur(24px);
+  /* -webkit para o navegador safari */
+  -webkit-backdrop-filter: blur(24px);  
+  display: grid;
+  place-items: center;
+  padding: 2rem 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  z-index: var(--z-modal);
+  transition: opacity .4s, visibility .4s;
+}
+
+.services_modal_content {
+  max-height: 420px;
+  position: relative;
+  background-color: var(--container-color);
+  padding: 3.5rem 1.5rem;
+  border-bottom: 6px solid var(--first-color);
+  overflow: auto;
+}
+
+.services_modal_content::-webkit-scrollbar {
+  width: .6rem;
+}
+
+.services_modal_content::-webkit-scrollbar-thumb {
+  background-color: var(--text-color-light);
+}
+
+.services_modal_title {
+  font-size: var(--h2-font-size);
+  margin-bottom: 2.5rem;
+}
+
+.services_modal_list {
+  margin-left: 1rem;
+}
+
+.services_modal_item {
+  text-align: initial;
+  list-style: square;
+}
+
+.services_modal_item::marker {
+  color: var(--first-color);
+}
+
+.services_modal_close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--first-color);
+  cursor: pointer;
+}
+
+/* Active modal */
+.active_modal {
+  opacity: 1;
+  visibility: visible;
+}
+
+/*=============== WORK ===============*/
+.work_container {
+  row-gap: 2rem;
+}
+
+.work_link {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.work_img {
+  filter: grayscale(1);
+  transition: filter .5s, transform .5s;
+}
+
+.work_icon {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  font-size: 2rem;
+  color: var(--first-color);
+  transition: transform .4s;
+}
+
+.work_link:hover .work_img {
+  transform: scale(1.1);
+  filter: none;
+}
+
+.work_link:hover .work_icon {
+  transform: translate(.5rem, -.5rem) rotate(-30deg);
+}
+
+.work_title {
+  font-size: var(--h2-font-size);
+  margin-bottom: .25rem;
+}
+
+.work_page {
+  padding-bottom: 4rem;
+}
+
+/*=============== TESTIMONIAL ===============*/
+.testimonial_container {
+  position: relative;
+}
+
+.testimonial_swiper {
+  margin-bottom: 2rem;
+}
+
+.testimonial_card {
+  background-color: var(--container-color);
+  padding: 2rem 1.25rem 2.5rem 1.25rem;
+  border-inline: 8px solid var(--first-color);
+  box-shadow: 0 12px 24px var(--shadow-color);
+  text-align: center;
+  transition: background-color .4s;
+}
+
+.testimonial_border {
+  width: 100px;
+  height: 100px;
+  border: 6px solid var(--first-color);
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+}
+
+.testimonial_img {
+  filter: grayscale(1);
+  transition: filter .4s;
+}
+
+.testimonial_name {
+  font-size: var(--h2-font-size);
+  margin-bottom: .5rem;
+}
+
+.testimonial_card:hover .testimonial_img {
+  filter: none;
+}
+
+/* Swiper class */
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: -1rem;
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--first-color-light);
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--first-color);
+}
+
+/*=============== CONTACT ===============*/
+
+
+/*=============== FOOTER ===============*/
+
+
+/*=============== SCROLL BAR ===============*/
+
+
+/*=============== SCROLL UP ===============*/
+
+
+/* Show Scroll Up */
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+
+
+/* For medium devices */
+
+
+/* For large devices */
+
+
+/* For 2K resolutions (2048 x 1152, 2048 x 1536) */

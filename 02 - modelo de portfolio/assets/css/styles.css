@@ -565,13 +565,13 @@ img {
 
 .testimonial_swiper {
   margin-bottom: 2rem;
+  box-shadow: 0 12px 24px var(--shadow-color);
 }
 
 .testimonial_card {
   background-color: var(--container-color);
   padding: 2rem 1.25rem 2.5rem 1.25rem;
   border-inline: 8px solid var(--first-color);
-  box-shadow: 0 12px 24px var(--shadow-color);
   text-align: center;
   transition: background-color .4s;
 }
@@ -601,7 +601,7 @@ img {
 
 /* Swiper class */
 .swiper-pagination-bullets.swiper-pagination-horizontal {
-  bottom: -1rem;
+  bottom: -3rem;
 }
 
 .swiper-pagination-bullet {
@@ -614,7 +614,81 @@ img {
 }
 
 /*=============== CONTACT ===============*/
+.contact_container {
+  padding-bottom: 4rem;
+}
 
+.contact_button {
+  justify-self: center;
+}
+
+.contact_page {
+  padding-block: 1rem 4rem;
+}
+
+.contact_form {
+  position: relative;
+}
+
+.contact_box {
+  position: relative;
+  width: 100%;
+  height: 58px;
+}
+
+.contact_input {
+  width: 100%;
+  height: 100%;
+  background-color: var(--body-color);
+  border: 3px solid var(--text-color-light);
+  padding: .5rem 1.5rem;
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  transition: border-color .4s, background-color .4s;
+}
+
+.contact_input:focus {
+  border-color: var(--title-color);
+}
+
+.contact_input:-webkit-autofill {
+  transition: background-color 6000s, color 6000s;
+}
+
+.contact_label {
+  position: absolute;
+  top: -16px;
+  left: 16px;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+  background-color:  var(--body-color);
+  padding: 8px;
+  transition:  background-color .4s;
+}
+
+.contact_area {
+  height: 10rem;
+}
+
+.contact_area textarea {
+  resize: none;
+  padding-top: 1.25rem;
+}
+
+.contact_send {
+  padding-block: 1.25rem;
+  cursor: pointer;
+}
+
+.contact_message {
+  position: absolute;
+  bottom: -2rem;
+  left: 0;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+}
 
 /*=============== FOOTER ===============*/
 

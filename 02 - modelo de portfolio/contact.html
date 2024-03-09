@@ -58,7 +58,34 @@
       <main class="main">
          <!--==================== CONTACT ====================-->
          <section class="contact section">
-            
+            <h2 class="section_title">
+               Let's Talk <br>
+               About Your Project 
+            </h2>
+
+            <div class="contact_page container grid">
+               <form action="" id="contact_form" class="contact_form grid">
+                  <div class="contact_group grid">
+                     <div class="contact_box">
+                        <input type="text" name="user_name" id="name" required class="contact_input" placeholder="Write your name">
+                        <label for="name" class="contact_label">First Name</label>
+                     </div>
+
+                     <div class="contact_box">
+                        <input type="email" name="user_email" id="email" placeholder="Write your email" required class="contact_input">
+                        <label for="email" class="contact_label">Email Address</label>
+                     </div>
+
+                     <div class="contact_box contact_area">
+                        <textarea name="user_message" id="message" required class="contact_input" placeholder="Write your message"></textarea>
+                        <label for="message" class="contact_label">Message</label>
+                     </div>
+                  </div>
+                  
+                  <p class="contact_message" id="contact_message"></p>
+                  <button class="contact_send button" type="submit">Send Message</button>
+               </form>
+            </div>
          </section>
       </main>
 
@@ -69,7 +96,8 @@
       <script src="assets/js/main.js"></script>
       
       <!--=============== EMAIL JS ===============-->
-      
+      <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
       
       <!--=============== CONTACT JS ===============-->
       <script src="assets/js/contact.js"></script>

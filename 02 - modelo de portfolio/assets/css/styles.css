@@ -357,6 +357,10 @@ body.dark_theme {
   justify-self: center;
 }
 
+.home_content {
+  row-gap: 3rem;
+}
+
 .home_data {
   row-gap: .75rem;
   text-align: center;
@@ -829,12 +833,291 @@ body.dark_theme {
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
+@media screen and (max-width: 320px) {
+  .container {
+    margin-inline: 1rem;
+  }
 
+  .services_modal {
+    padding-inline: .5rem;
+  }
+
+  .about_skills_content {
+    grid-template-columns: repeat(4, max-content);
+  }
+}
 
 /* For medium devices */
+@media screen and (min-width: 576px) {
+  .services_container {
+    grid-template-columns: 320px;
+    justify-content: center;
+  }
 
+  .services_modal_content {
+    width: 400px;
+  }
+
+  .work_container {
+    grid-template-columns: 350px;
+    justify-content: center;
+  }
+
+  .about_container {
+    grid-template-columns: 400px;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .services_container {
+    grid-template-columns: repeat(2, 320px);
+  }
+
+  .work_container {
+    grid-template-columns: repeat(2, 350px);
+  }
+
+  .testimonail_container {
+    max-width: 700px;
+    margin-inline: auto;
+  }
+
+  .testimonial_description {
+    width: 470px;
+    margin-inline: auto;
+  }
+
+  .contact_page {
+    grid-template-columns: 670px;
+    justify-content: center;
+  }
+
+  .contact_group {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+  }
+
+  .contact_area {
+    height: 18rem;
+  }
+
+  .contact_message {
+    bottom: 5rem;
+  }
+
+  .contact_send {
+    justify-self: center;
+    margin-top: 1.5rem;
+  }
+}
 
 /* For large devices */
+@media screen and (min-width: 1150px) {
+  .container {
+    margin-inline: auto;
+  }
 
+  .section {
+    padding-block: 7rem 2rem;
+  }
+
+  .section_title {
+    margin-bottom: 3.5rem;
+  }
+
+  .nav {
+    height: calc(var(--header-height) + 2rem);
+    column-gap: 3rem;
+  }
+
+  .nav_toggle,
+  .nav_close {
+    display: none;
+  }
+
+  .nav_menu {
+    margin-left: auto;
+  }
+
+  .nav_list {
+    flex-direction: row;
+    align-items: center;
+    column-gap: 3rem;
+  }
+
+  .change_theme {
+    color: var(--title-color);
+  }
+
+  .perfil {
+    width: 500px;
+    height: 500px;
+    border-width: 20px;
+  }
+
+  .perfil_content {
+    width: 360px;
+    height: 360px;
+    border-width: 20px;
+  }
+
+  .perfil_img {
+    width: 300px;
+  }
+
+  .home_rectangle {
+    width: 30vw;
+    height: 100%;
+  }
+
+  .home_container {
+    position: relative;
+    grid-template-columns: 500px 300px;
+    align-items: center;
+    column-gap: 4rem;
+    padding-block: 3.5rem 8rem;
+  }
+
+  .home_content {
+    row-gap: 4rem;
+  }
+
+  .home_data {
+    row-gap: 1rem;
+    text-align: initial;
+  }
+
+  .home_social {
+    flex-direction: column;
+    row-gap: 1.5rem;
+    position: absolute;
+    top: -4rem;
+    bottom: 0;
+    right: 0;
+  }
+
+  .home_social_link {
+    color: var(--first-color);
+  }
+
+  .home_button {
+    justify-self: flex-start;
+  }
+
+  .services_container {
+    grid-template-columns: repeat(3, 345px);
+  }
+
+  .services_card {
+    padding-block: 4.5rem;
+  }
+
+  .services_modal_content {
+    max-width: 480px;
+    padding: 5.5rem 2rem;
+  }
+
+  .services_modal_close {
+    font-size: 2rem;
+  }
+
+  .work_container {
+    grid-template-columns: repeat(3, 350px);
+    row-gap: 4rem;
+  }
+
+  .testimonial_card {
+    padding-block: 3rem 3.5rem;
+  }
+
+  .testimonial_border {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact_container {
+    grid-template-columns: repeat(2, max-content);
+    justify-content: center;
+    align-items: center;
+    column-gap: 25rem;
+    padding-block: 1rem 5rem;
+  }
+
+  .contact_container .section_title {
+    text-align: initial;
+    margin: 0;
+  }
+
+  .footer_container {
+    row-gap: 6rem;
+    padding-block: 3.5rem;
+  }
+
+  .footer_content {
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+  }
+
+  .footer_logo {
+    color: var(--h2-font-size);
+  }
+
+  .footer_links {
+    column-gap: 3rem;
+  }
+
+  .footer_social {
+    column-gap: 1.5rem;
+  }
+
+  .scrollUp {
+    right: 3rem;
+  }
+
+  .about_container {
+    grid-template-columns: 500px 440px;
+    align-items: center;
+    column-gap: 8rem;
+    padding-top: 2rem;
+  }
+
+  .about_data {
+    row-gap: 3.5rem;
+  }
+
+  .about_info {
+    text-align: initial;
+  }
+
+  .about_button {
+    justify-self: flex-start;
+  }
+
+  .about_skills_title {
+    text-align: initial;
+  }
+
+  .about_skills_content {
+    grid-template-columns: repeat(7, max-content);
+    justify-content: initial;
+  }
+
+  .about_skills_img {
+    width: 40px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .home_rectangle {
+    width: 33vw;
+  }
+}
 
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
+@media screen and (min-width: 2048px) {
+  .home_rectangle {
+    width: 40vw;
+  }
+}

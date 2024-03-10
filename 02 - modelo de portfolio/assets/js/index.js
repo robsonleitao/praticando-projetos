@@ -34,3 +34,9 @@ const swiperTetimonial = new Swiper('.testimonial_swiper', {
   });
 
 /*=============== SHOW SCROLL UP ===============*/ 
+const scrollUp = () => {
+    const scrollUp = document.querySelector('#scrollUp');
+    this.scrollY >= 50 ? scrollUp.classList.add('show_scroll') : scrollUp.classList.remove('show_scroll')
+}
+
+window.addEventListener('scroll', scrollUp);

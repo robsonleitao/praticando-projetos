@@ -5,7 +5,8 @@ contactMessage = document.querySelector('#contact_message');
 const sendEmail = (e) => {
     e.preventDefault()
 
-    emailjs.sendform('service_7jdpvjp', 'template_2vdxq3f', '#contact_form', 'KnuYeI7-OYNx7DYEk').then(() => {
+    emailjs.sendForm('service_1p3bfes', 'template_2vdxq3f', '#contact_form', 'KnuYeI7-OYNx7DYEk')
+    .then(() => {
         // Show sent message
         contactMessage.textContent = 'Message sent successfully ✅';
 
@@ -21,3 +22,5 @@ const sendEmail = (e) => {
         contactMessage.textContent = 'Message not sent (service error) ❌';
     })
 }
+
+contactForm.addEventListener('submit', sendEmail);

@@ -1,0 +1,622 @@
+/* ======== Propriedades Base ========*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+  
+html {
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: var(--fonte-poppins), sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+body {
+    background-color: var(--cor-bg);
+    font-size: 1rem;
+}
+
+/* ======== Barra de rolagem ========*/
+::-webkit-scrollbar {
+    width: .6rem;
+    background-color: var(--cor-branca);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--cor-azul-claro);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--cor-destaque);
+}
+
+/* ======== Variaveis CSS ========*/
+:root {
+
+    /* cores */
+    --cor-texto: #000b0f;
+    --cor-bg: #f8fcff;
+    --cor-azul-claro: #6b7aff;
+    --cor-destaque: #3c39fe;
+    --cor-branca: #ffffff;
+
+    /* tipografia */
+    --fonte-poppins: 'Poppins';
+}
+
+/* ======== Classes Reutilizaveis ========*/
+.container {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+}
+
+.secao {
+    padding-block: 5rem 0;
+}
+
+.titulo_secao {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--cor-texto);
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+/* ======== Header e NAV ========*/
+.header {
+    background-color: var(--cor-branca);
+    height: 4.5rem;
+    padding: 0 1rem;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+.nav_lista {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    justify-content: center;
+}
+
+.nav_logo {
+    color: var(--cor-destaque);
+}
+
+.nav_link {
+    color: var(--cor-azul-claro); 
+    transition: .3s;  
+    padding: 2rem 1rem;
+    height: 4.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.nav_link:hover {
+    background-color: var(--cor-destaque);
+    color: var(--cor-branca);
+}
+
+.nav_toggle,
+.nav_close {
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.nav_menu.mostrar_menu {
+    top: 0;
+}
+
+/* Navegação para dispositivos moveis */
+@media screen and (max-width: 1150px) {
+    .nav_menu {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      background-color: var(--cor-branca);
+      width: 100%;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+      transition: top .4s;
+    }
+
+    .nav_lista {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav_close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+    }
+
+    .nav_link:hover {
+        background-color: transparent;
+        color: var(--cor-destaque);
+    }
+}
+
+/* ======== Secao Inicio ========*/
+.secao_inicio {
+    display: flex;
+    gap: 0.875rem;
+}
+
+.inicio_info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.inicio_avatar {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.inicio_perfil {
+    width: 450px;
+    height: 450px;
+    border: 10px solid var(--cor-branca);
+    outline: 15px solid var(--cor-destaque);
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.inicio_img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.inicio_profissao {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--cor-texto);
+}
+
+.inicio_nome {
+    color: var(--cor-destaque);
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.inicio_redes_sociais {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.inicio_social_link {
+    color: var(--cor-texto);
+}
+
+.inicio_social_link i {
+    font-size: 1.5rem;
+    transition: .1s;
+}
+
+.inicio_social_link i:hover {
+    color: var(--cor-destaque);
+}
+
+/* ======== Secao Sobre mim ========*/
+.descricao {
+    text-align: center;
+    color: var(--cor-texto);
+    font-size: 1.125rem;
+}
+
+.descricao b {
+    color: var(--cor-destaque);
+}
+
+.sobre_habilidades {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.titulo_sobre_habilidades {
+    font-size: 1.125rem;
+    color: var(--cor-texto);
+    font-weight: 400;
+}
+
+.sobre_habilidades_conteudo {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.habilidades_img {
+    margin-top: 1.125rem;
+    width: 40px;
+    height: 40px;
+    transition: .3s;
+}
+
+.habilidades_img:hover {
+    transform: translateY(-.5rem);
+}
+
+/* ======== Secao Portfolio ========*/
+.portfolio_cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.portfolio_card {   
+    width: 30rem;
+    height: 25rem;
+    overflow: hidden;
+    background-color: var(--cor-branca);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 2px 10px 11px -6px rgba(0,0,0,0.3);;
+}
+
+.img_card {
+    height: 60%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.info_card {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+}
+
+.titulo_card {
+    color: var(--cor-texto);
+    font-weight: 600;
+}
+
+.btn_card {
+    cursor: pointer;
+    padding: .5rem 1.5rem;
+    border: 2px solid var(--cor-destaque);
+    color: var(--cor-texto);
+    border-radius: 5px;
+    display: inline-block;
+    margin: 0 auto;
+    transition: .1s;
+}
+
+.btn_card:hover {
+    background-color: var(--cor-destaque);
+    color: var(--cor-branca);
+}
+
+/* ======== Secao Portfolio ========*/
+.form_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grupo_inputs {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+}
+
+.input_container {
+    display: flex;
+    flex-direction: column;
+    width: 35rem;
+}
+
+.input_container label {
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.input_nome,
+.input_msg  {
+    outline: none;
+    font-size:  1.125rem;
+    padding: .5rem 1rem;
+    background-color: transparent;
+    transition: border-color 0.3s ease;
+    border: 2px solid var(--cor-texto);
+}
+
+.input_nome:focus,
+.input_msg:focus {
+    border-color: var(--cor-azul-claro);
+}
+
+.input_msg {
+    resize: none;
+    height: 10rem;
+}
+
+.form_botao {
+    margin-top: 2rem;
+    background-color: var(--cor-destaque);
+    border: none;
+    color: var(--cor-branca);
+    width: 10rem;
+    padding: .5rem 2rem;
+    font-size: 1.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.form_botao:hover i {
+    transition: .3s;
+    transform: translateX(.313rem);
+}
+
+/* ======== Footer ========*/
+.footer {
+    margin-top: 5rem;
+    background-color: var(--cor-destaque);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.footer_info {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.footer_logo {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--cor-branca);
+}
+
+.footer_social {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.footer_social_link {
+    font-size: 1.5rem;
+    color: var(--cor-branca);
+    transition: .3s;
+}
+
+.footer_social_link:hover {
+    transform: translateY(-.3rem);
+}
+
+.footer_links {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.footer_link {
+    color: var(--cor-branca);
+}
+
+.footer_link:hover {
+    text-decoration: underline;
+}
+
+.footer_copy {
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    color: var(--cor-branca);
+}
+
+/* ---------------------------------------------------- */
+/* Breakpoints */
+/* ---------------------------------------------------- */
+/* para telas maiores */
+@media screen and (min-width: 1150px) {
+    .nav_toggle,
+    .nav_close {
+        display: none;
+    }
+}
+
+/* For small devices */
+@media screen and (max-width: 575px) {
+    .secao_inicio .inicio_info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .secao_inicio .inicio_avatar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .secao_inicio .inicio_nome {
+        line-height: 1.2;
+    }
+
+    .secao_inicio .inicio_perfil {
+        width: 13.75rem;
+        height: 13.75rem;
+    }
+
+    .secao_inicio .inicio_conteudo {
+        text-align: center;
+    }
+
+    .secao_inicio .inicio_redes_sociais {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .secao_sobre .descricao {
+        font-size: 0.875rem;
+        padding: 0.5rem;
+    }
+
+    .secao_sobre .titulo_sobre_habilidades {
+        font-size: 0.875rem;
+    }
+
+    .secao_sobre .habilidades_img {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .secao_sobre .sobre_habilidades_conteudo {
+        display: grid;
+        grid-template-columns: repeat(3, max-content);
+        row-gap: .5rem;
+    }
+
+    .secao_portfolio .portfolio_cards {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+        padding: 0 2rem;
+    }
+
+    .secao_portfolio .portfolio_card {
+        width: 18rem;
+        height: 25rem;
+    }
+
+    .secao_contato .input_container {
+        width: 18rem;
+    }
+
+    .footer .footer_links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer .footer_copy {
+        text-align: center;
+    }
+}
+
+/* For medium devices */
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .secao_inicio .inicio_info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .secao_inicio .inicio_avatar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .secao_inicio .inicio_nome {
+        line-height: 1.2;
+    }
+
+    .secao_inicio .inicio_perfil {
+        width: 25rem;
+        height: 25rem;
+    }
+
+    .secao_inicio .inicio_conteudo {
+        text-align: center;
+    }
+
+    .secao_inicio .inicio_redes_sociais {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .secao_sobre .descricao {
+        padding: 0.5rem;
+    }
+
+    .secao_sobre .sobre_habilidades_conteudo {
+        display: grid;
+        grid-template-columns: repeat(3, max-content);
+        row-gap: .5rem;
+    }
+
+    .secao_portfolio .portfolio_cards {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+        padding: 0 2rem;
+    }
+
+    .secao_portfolio .portfolio_card {
+        width: 25rem;
+        height: 25rem;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px){
+
+    .secao_inicio .inicio_perfil {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .secao_inicio .inicio_info {
+        padding: 1.5rem;
+    }
+
+    .secao_sobre .sobre_habilidades_conteudo {
+        display: flex;
+    }
+
+    .secao_portfolio .portfolio_cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 2rem;
+        justify-items: center;
+    }
+    
+    .secao_portfolio .portfolio_card {
+        width: 20rem;
+        height: 25rem;
+    }
+}

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+    <title>Atividade - Portfólio</title>
+</head>
+<body>
+    <!-- ================= HEADER ==================== -->
+    <header class="header" id="inicio">
+        <nav class="nav container">
+            <a href="#" class="nav_logo"><strong>Dev. André</strong></a>
+
+            <div class="nav_menu" id="nav_menu">
+                <ul class="nav_lista">
+                    <li class="nav_item">
+                        <a href="#inicio" class="nav_link">Início</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#sobre" class="nav_link">Sobre Mim</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#portfolio" class="nav_link">Portfólio</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#contato" class="nav_link">Contato</a>
+                    </li>
+                </ul>
+
+                <!-- botao fechar menu -->
+               <div class="nav_close" id="nav_close">
+                  <i class="ri-close-line"></i>
+               </div>
+            </div>
+
+            <!-- botao abrir menu -->
+            <div class="nav_toggle" id="nav_toggle">
+                <i class="ri-apps-2-line"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ================= MAIN ==================== -->
+    <main class="main">
+        <!-- ================= SECAO INICIO ==================== -->
+        <section class="secao_inicio secao container">
+            <div class="inicio_info">
+                <div class="inicio_avatar">
+                    <div class="inicio_perfil">
+                        <img class="inicio_img" src="assets/img/img_perfil.jpg" alt="foto do web designer André">
+                    </div>
+                    
+                    <div class="inicio_conteudo">
+                        <h2 class="inicio_profissao">Web Designer</h2>
+                        <h1 class="inicio_nome">André Azevedo</h1>
+                    </div>
+                </div>
+
+                <div class="inicio_redes_sociais">
+                    <a href="#" class="inicio_social_link" title="Github">
+                        <i class="ri-github-fill"></i>
+                    </a>
+                    
+                    <a href="#" class="inicio_social_link" title="LinkedIn">
+                        <i class="ri-linkedin-box-fill"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECAO SOBRE ==================== -->
+        <section class="secao_sobre secao container" id="sobre">
+            <h2 class="titulo_secao">Sobre Mim</h2>
+            
+            <div class="sobre_descricao">
+                <p class="descricao">
+                    Apaixonado por criar <b>Páginas Web</b>, tenho anos de experiência e muitos clientes <br /> 
+                    estão satisfeitos com os projetos realizados.
+                </p>   
+                
+                <div class="sobre_habilidades">
+                    <h3 class="titulo_sobre_habilidades">Minhas habilidades são:</h3>
+
+                    <div class="sobre_habilidades_conteudo">
+                        <img src="assets/img/about-html.svg" alt="imagem" class="habilidades_img" title="Html">
+                        <img src="assets/img/about-css.svg" alt="imagem" class="habilidades_img" title="Css">
+                        <img src="assets/img/about-javascript.svg" alt="imagem" class="habilidades_img" title="Javascript">
+                        <img src="assets/img/about-git.svg" alt="imagem" class="habilidades_img" title="Git">
+                        <img src="assets/img/about-github.svg" alt="imagem" class="habilidades_img" title="Github">
+                        <img src="assets/img/about-photoshop.svg" alt="imagem" class="habilidades_img" title="Photoshop">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECAO PORTFOLIO ==================== -->
+        <section class="secao_portfolio secao container" id="portfolio">
+            <h2 class="titulo_secao">Últimos trabalhos</h2>
+
+            <div class="portfolio_cards">
+                <div class="portfolio_card">
+                    <img src="assets/img/trabalho_1.png" alt="imagem" class="img_card">
+
+                    <div class="info_card">
+                        <h3 class="titulo_card">Site portfólio</h3>
+                        <a href="#" class="btn_card">Ver mais</a>
+                    </div>
+                </div>
+
+                <div class="portfolio_card">
+                    <img src="assets/img/trabalho_2.png" alt="imagem" class="img_card">
+
+                    <div class="info_card">
+                        <h3 class="titulo_card">Site de viagens</h3>
+                        <a href="#" class="btn_card">Ver mais</a>
+                    </div>
+                </div>
+
+                <div class="portfolio_card">
+                    <img src="assets/img/trabalho_3.png" alt="imagem" class="img_card">
+
+                    <div class="info_card">
+                        <h3 class="titulo_card">Escritório de advocacia</h3>
+                        <a href="#" class="btn_card">Ver mais</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECAO CONTATO ==================== -->
+        <section class="secao secao_contato container" id="contato">
+            <h2 class="titulo_secao">Fale comigo</h2>
+            
+            <form class="form_container">
+                <div class="grupo_inputs">
+                    <div class="input_container">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" class="input_nome" placeholder="Digite seu nome">
+                    </div>
+
+                    <div class="input_container">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea name="mensagem" class="input_msg" id="mensagem" placeholder="Digite sua mensagem"></textarea>
+                    </div>
+                </div>
+                
+                <button class="form_botao" type="submit">
+                    Enviar
+                    <i class="ri-mail-send-line"></i>
+                </button>
+            </form>
+        </section>
+
+        <!-- ================= FOOTER ==================== -->
+    <footer class="footer">
+        <div class="footer_container container">
+            <div class="footer_info">
+                <a href="#" class="footer_logo">Dev. André</a>
+
+                <div class="footer_social">
+                    <a href="#" target="_blank" class="footer_social_link" title="Facebook">
+                       <i class="ri-facebook-circle-fill"></i>
+                    </a>
+                    <a href="#" target="_blank" class="footer_social_link" title="Instagram">
+                       <i class="ri-instagram-fill"></i>
+                    </a>
+                    <a href="#" target="_blank" class="footer_social_link" title="LinkedIn">
+                       <i class="ri-linkedin-box-fill"></i>
+                    </a>
+                    <a href="#" target="_blank" class="footer_social_link" title="X">
+                       <i class="ri-twitter-x-fill"></i>
+                    </a>
+                </div>
+
+                <ul class="footer_links">
+                    <li>
+                        <a href="#inicio" class="footer_link">Início</a>
+                    </li>
+                    <li>
+                        <a href="#sobre" class="footer_link">Sobre Mim</a>
+                    </li>
+                    <li>
+                        <a href="#portfolio" class="footer_link">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="#contato" class="footer_link">Contato</a>
+                    </li>
+                </ul>
+            </div>
+
+            <span class="footer_copy">
+               &#169; Todos os direitos reservados - André Azevedo
+            </span>
+         </div>
+    </footer>
+    </main>
+    <!-- ================= FOOTER ==================== -->
+
+
+    <script src="js/main.js"></script>
+</body>
+</html>
